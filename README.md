@@ -140,5 +140,6 @@ Lines that held only a comment or a `#define` leave blank lines at the top of th
 - `#if` and `#elif` lines are passed through unchanged and are not evaluated. `#elif` after `#ifdef` or `#ifndef` is not supported.
 - The `#` (stringify) and `##` (token pasting) operators are not supported.
 - A macro call whose arguments span several lines is not expanded.
+- Macro and parameter names can be at most 63 characters long, and a macro can have at most 10 parameters. A longer name or a bigger parameter list makes the `#define` invalid, and it is ignored with a warning.
 - Includes can be nested up to 32 levels deep, which stops a file that includes itself.
 - The program exits with status 1 and removes the partial output file if it cannot read the input or hits a fatal error.
